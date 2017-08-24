@@ -1,0 +1,23 @@
+html,body{
+	height: 100%;
+	width: 100%;
+}
+
+.demo-wrap {
+	height: 100%;
+	width: 100%;
+	padding-top: 50px;
+	display: flex
+}
+
+.demo-left {
+	width: 220px;
+	height: 100%;
+	margin-left: -15px;
+	background: #f2f2f2
+}
+
+.demo-right {
+	flex: 1;
+	margin-right: -15px
+}
