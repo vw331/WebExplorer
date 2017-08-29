@@ -6,6 +6,9 @@
 	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="style/css/index.css">
 	<link rel="stylesheet" href="plugin/seeExplorer/css/style.css">
+	<script src="lib/jquery-1.11.3.min.js"></script>
+	<script src="plugin/seeExplorer/js/seeExplorer.js"></script>
+	<script src="index.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -17,9 +20,9 @@
 	</nav>
 	<div class="container-fluid demo-wrap">
 		<div class="demo-left"></div>
-		<div class="demo-right">
+		<div class="demo-right" id="test">
 			
-			<div class="see-container">
+			<!-- <div class="see-container">
 				<div class="see-header">
 					<div class="see-header-left">
 						<a class="see-btn"><span class="see-iconfont see-btn-back"></span></a>
@@ -38,10 +41,10 @@
 									<a href="" class="see-breadcrumb-link"><span class="see-iconfont see-breadcrumb-link-home"></span> 主页</a>
 								</li>
 								<li class="see-breadcrumb-bar">
-									<a href="" class="see-breadcrumb-link">主页</a>
+									<a href="" class="see-breadcrumb-link">我的文档</a>
 								</li>
 								<li class="see-breadcrumb-bar">
-									<a href="" class="see-breadcrumb-link">主页</a>
+									<a href="" class="see-breadcrumb-link">公司资料</a>
 								</li>
 							</ul>
 						</div>
@@ -72,13 +75,10 @@
 						</div>
 					</div>					
 				</div>
-				<div class="see-footer">
-					<p class="see-notice">15个项目</p>
-				</div>
 				<div class="see-main">
 					<div class="see-body see-cardLayout-wrap">
 						
-						<div class="see-item-card">
+						<div class="see-item-card see-item-hover">
 							<div class="see-item-up">
 								<span class="see-item-ico see-type-folder"></span>
 							</div>
@@ -87,8 +87,8 @@
 								<p class="see-item-text">公司项目</p>
 							</div>
 						</div>
-
-						<div class="see-item-card">
+			
+						<div class="see-item-card see-item-select">
 							<div class="see-item-up">
 								<span class="see-item-ico see-type-folder"></span>
 							</div>
@@ -96,7 +96,7 @@
 								<p class="see-item-text">2017年重要文件勿删</p>
 							</div>
 						</div>
-
+			
 						<div class="see-item-card">
 							<div class="see-item-up">
 								<span class="see-item-ico see-type-folder"></span>
@@ -105,10 +105,13 @@
 								<p class="see-item-text">公司项目</p>
 							</div>
 						</div>
-
+			
 					</div>
 				</div>
-			</div>
+				<div class="see-footer">
+					<p class="see-notice">15个项目</p>
+				</div>
+			</div> -->
 
 		</div>
 	</div>
