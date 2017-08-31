@@ -20,8 +20,4 @@ $(function(){
 		]
 	})
 
-	manager.on('onSelect',function(){
-		console.log(111)
-	})
-
 })

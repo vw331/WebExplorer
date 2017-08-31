@@ -27,9 +27,15 @@
 		this.initToolbar()
 		this.initMain()
 		this.initFooter()
-
 		
 		this.initManager()
+	}
+
+	SeeExplorer.prototype.trigger = function(name){
+
+		var args = Array.prototype.slice.call( arguments, 1 )
+		this.options[ SeeExplorer_EVENTS[name]  ].apply( this.options, args ) 
+
 	}
 
 	SeeExplorer.prototype.initContainer = function(){
@@ -173,20 +179,48 @@
 	}
 
 	SeeExplorer.prototype.toggleSelect = function(event){
+
 		var $this = $( event.currentTarget )
 		var isSelected = $this.data('selected')
 
+		
+
 		if( !isSelected ){
-			$this.addClass('see-item-selected').data('selected',true)
-			this.trigger('onSelect')
+			this.setSelect( $this )
 		}
 		else{
-			$this.removeClass('see-item-selected').data('selected',false)
+			this.cancelSelect( $this )
 		}
+
+		this.trigger('click.item', $this )
+	}
+
+	SeeExplorer.prototype.setSelect = function(item){
+
+		item.addClass('see-item-selected').data('selected',true)
+		this.trigger( 'select.item', item.data('target'), item )
+	}
+
+	SeeExplorer.prototype.cancel = function(item){
+
+		item.removeClass('see-item-selected').data('selected',false)
+
 	}
 
 	var SeeExplorer_DEFAULTS = {
-		data : []
+		data: [],
+		onClickItem: function( $element ){
+			return false
+		},
+		onSelectItem: function(field, $element){
+			console.log( arguments )
+			return false
+		} 
+	}
+
+	var SeeExplorer_EVENTS = {
+		'click.item' : 'onClickItem',
+		'select.item' : 'onSelectItem',
 	}
 
 
@@ -194,8 +228,6 @@
    $.fn.seeExplorer = function(opt){
 
 	   	var options = $.extend( SeeExplorer_DEFAULTS, opt )
-
-	   	console.log( options )
 
 	   	return new SeeExplorer( $(this), options )
 
